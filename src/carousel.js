@@ -133,7 +133,9 @@ const Carousel = React.createClass({
   },
 
   componentDidMount() {
-    this.setDimensions();
+    setTimeout(() => {
+      this.setDimensions();
+    }, 50);
     this.bindEvents();
     this.setExternalData();
     if (this.props.autoplay) {
@@ -759,6 +761,8 @@ const Carousel = React.createClass({
   },
 
   getSlideStyles(index, positionValue) {
+    var listWidth = this.state.slideWidth * React.Children.count(this.props.children);
+    var spacingOffset = this.props.cellSpacing * React.Children.count(this.props.children);
     var targetPosition = this.getSlideTargetPosition(index, positionValue);
     return {
       position: 'absolute',

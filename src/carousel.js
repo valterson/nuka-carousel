@@ -662,9 +662,9 @@ const Carousel = React.createClass({
     firstSlide = frame.childNodes[0].childNodes[0];
     if (firstSlide) {
       firstSlide.style.height = 'auto';
-      slideHeight = this.props.vertical ?
-        firstSlide.offsetHeight * props.slidesToShow :
-        firstSlide.offsetHeight;
+      // slideHeight = this.props.vertical ?
+      //   firstSlide.offsetHeight * props.slidesToShow :
+      //   firstSlide.offsetHeight;
     } else {
       slideHeight = 100;
     }
